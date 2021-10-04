@@ -1,101 +1,146 @@
-## ☁️ A simple one page marketing site starter for SaaS companies and indie hackers.
+# gatsby-gitbook-starter
 
-[Live Demo: https://gatsby-starter-saas-marketing.netlify.com/ ](https://gatsby-starter-saas-marketing.netlify.com/)
+Kick off your project with this starter to create a powerful/flexible docs/tutorial web apps.
 
-If you find this starter helpful, feel free to give me a follow on <a href="https://www.indiehackers.com/keeg" target="blank">Indie Hackers</a>.
+![gatsby-gitbook-starter](https://graphql-engine-cdn.hasura.io/learn-hasura/gatsby-gitbook-starter/assets/documentation_app_blog.png)
 
-<img src="src/images/gatsby-starter-saas-marketing-full-page.png?raw=true" width="600" alt="Gatsby Starter Saas Marketing Full Screen Image"/>
+## Motivation
 
-### Getting started 🍻
+We wanted to create a [GraphQL tutorial](https://learn.hasura.io) series. The content would be written by developers for various languages/frameworks and what better than writing it in Markdown! And since this is a tutorial series we also needed rich embeds, syntax highlighting and more customisations.
 
-install Gatsby CLI - [more info](https://www.gatsbyjs.org/tutorial/part-zero/)
+We also wanted to serve these tutorials in sub paths of [learn.hasura.io](https://learn.hasura.io). To serve all these requirements, we decided to use Gatsby + MDX (Markdown + JSX) to extend markdown and used a neat consistent theme like the one at [GitBook](https://www.gitbook.com) and deployed as docker containers.
 
-```sh
-npm install -g gatsby-cli
-```
+## 🔥 Features
+- Write using Markdown / [MDX](https://github.com/mdx-js/mdx)
+- GitBook style theme
+- Syntax Highlighting using Prism [`Bonus`: Code diff highlighting]
+- Search Integration with Algolia
+- Progressive Web App, Works Offline
+- Google Analytics Integration
+- Automatically generated sidebar navigation, table of contents, previous/next
+- Dark Mode toggle
+- Edit on Github
+- Fully customisable
+- Rich embeds and live code editor using MDX
+- Easy deployment: Deploy on Netlify / Now.sh / Docker
 
-or
+## 🔗 Live Demo
 
-```sh
-yarn global add gatsby-cli
-```
+Here's a [live demo](https://learn.hasura.io/graphql/react)
 
-install the starter locally:
+## 🚀 Quickstart
 
-```sh
-gatsby new gatsby-starter-saas-marketing https://github.com/keegn/gatsby-starter-saas-marketing
-```
-
-install dependencies:
-
-```sh
-yarn install
-```
-
-start the development server:
-
-```sh
-gatsby develop
-```
-
-At the project root, compile your application for deployment:
-
-```sh
-gatsby build
-```
-
-Clean the cache to fix certain errors - run the clean command before starting the dev server:
-
-```sh
-gatsby clean
-```
-
-At the project root, serve the production build of your site:
-
-```sh
-gatsby serve
-```
-
-### Styles
-
-This starter uses [styled-components](https://www.styled-components.com/). The theme file contains the base styles `src/styles/theme.js` and the global styles file contains basic element styles and a style reset `src/styles/GlobalStyles.js`.
-
-### Navigation
-
-This starter uses [react-anchor-link-smooth-scroll](https://github.com/mauricevancooten/react-anchor-link-smooth-scroll#readme) and [react-scrollspy](https://github.com/makotot/react-scrollspy).
-To link a navigation item to a section simply add an id and string value to a section parent element that corresponds to the same navigation string value in `navigation.js`
-<br>
-<br>
-⚠️ Only the `Features` section is linked. Product and Pricing sections are intentionally not linked and will throw a `TypeError` in the console when clicked (because they do not exist in the starter). Please reach out if you want help extending this feature.
-
-### Deploying to Netlify
-
-[Deployment Guide](http://gatsbyjs.org/docs/deploying-to-netlify)
-
-### Collect emails with Netlify Forms
-
-[Form Handling with Gatsby.js V2 and Netlify](https://codebushi.com/form-handling-gatsby-netlify/)
-
-### Netlify form usage example
-
-In `header.js` replacing the existing `<HeaderForm>...</HeaderForm>` components with the following should provide a working example once your site is deployed:
+Get started by running the following commands:
 
 ```
-<HeaderForm
- name="early-access"
- method="post"
- data-netlify-honeypot="bot-field"
- data-netlify="true"
->
-  <input type="hidden" name="bot-field" />
-  <input type="hidden" name="form-name" value="early-access" />
-  <HeaderInput
-   type="email"
-   placeholder="Your email"
-   name="email"
-   id="email"
-   required
-  />
-  <HeaderButton>Early access</HeaderButton>
-</HeaderForm>
+$ git clone git@github.com:hasura/gatsby-gitbook-starter.git
+$ cd gatsby-gitbook-starter
+$ npm install
+$ npm start
 ```
+
+Visit `http://localhost:8000/` to view the app.
+
+## 🔧 Configure
+
+Write markdown files in `content` folder.
+
+Open `config.js` for templating variables. Broadly configuration is available for `gatsby`, `header`, `sidebar` and `siteMetadata`.
+
+- `gatsby` config for global configuration like 
+    - `pathPrefix` - Gatsby Path Prefix
+    - `siteUrl` - Gatsby Site URL
+    - `gaTrackingId` - Google Analytics Tracking ID
+
+- `header` config for site header configuration like
+    - `title` - The title that appears on the top left
+    - `githubUrl` - The Github URL for the docs website
+    - `helpUrl` - Help URL for pointing to resources
+    - `tweetText` - Tweet text
+    - `links` - Links on the top right
+    - `search` - Enable search and [configure Algolia](https://www.gatsbyjs.org/docs/adding-search-with-algolia/)
+
+- `sidebar` config for navigation links configuration
+    - `forcedNavOrder` for left sidebar navigation order. It should be in the format "/\<filename>"
+    - `frontLine` - whether to show a front line at the beginning of a nested menu.(Collapsing capability would be turned of if this option is set to true)
+    - `links` - Links on the bottom left of the sidebar
+    - `ignoreIndex` - Set this to true if the index.md file shouldn't appear on the left sidebar navigation. Typically this can be used for landing pages.
+
+- `siteMetadata` config for website related configuration
+    - `title` - Title of the website
+    - `description` - Description of the website
+    - `ogImage` - Social Media share og:image tag
+    - `docsLocation` - The Github URL for Edit on Github
+
+- For sub nesting in left sidebar, create a folder with the same name as the top level `.md` filename and the sub navigation is auto-generated. The sub navigation is alphabetically ordered.
+
+### Algolia Configuration
+
+To setup Algolia, go to `config.js` and update the `search` object to look like the one below:
+
+```...,
+	"search": {
+		"enabled": true,
+		"indexName": "MY_INDEX_NAME",
+		"algoliaAppId": process.env.GATSBY_ALGOLIA_APP_ID,
+		"algoliaSearchKey": process.env.GATSBY_ALGOLIA_SEARCH_KEY,
+		"algoliaAdminKey": process.env.ALGOLIA_ADMIN_KEY
+	},
+```
+
+Values for Algolia App ID, Search Key, and Admin Key can be obtained from Algolia Dashboard with the right set of permissions. Replace `MY_INDEX_NAME` with the Algolia Index name of your choice. To build the Algolia index, you need to run `npm run build` which will do a gatsby build along with content indexing in Algolia.
+
+### Progressive Web App, Offline
+
+To enable PWA, go to `config.js` and update the `pwa` object to look like the one below:
+
+```
+   "pwa": {
+        "enabled": false, // disabling this will also remove the existing service worker.
+        "manifest": {
+            "name": "Gatsby Gitbook Starter",
+            "short_name": "GitbookStarter",
+            "start_url": "/",
+            "background_color": "#6b37bf",
+            "theme_color": "#6b37bf",
+            "display": "standalone",
+            "crossOrigin": "use-credentials",
+            icons: [
+                {
+                    src: "src/pwa-512.png",
+                    sizes: `512x512`,
+                    type: `image/png`,
+                },
+            ],
+        },
+    }
+```
+
+## Live Code Editor
+
+To render react components for live editing, add the `react-live=true` to the code section. For example:
+
+```javascript react-live=true
+<button>Edit my text</button>
+```
+
+In the above code, just add `javascript react-live=true` after the triple quote ``` to start rendering react components that can be edited by users.
+
+## 🤖 SEO friendly
+
+This is a static site and comes with all the SEO benefits. Configure meta tags like title and description for each markdown file using MDX Frontmatter
+
+```markdown
+---
+title: "Title of the page"
+metaTitle: "Meta Title Tag for this page"
+metaDescription: "Meta Description Tag for this page"
+---
+```
+
+Canonical URLs are generated automatically.
+
+## ☁️ Deploy
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/hasura/gatsby-gitbook-starter)
+
