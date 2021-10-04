@@ -1,13 +1,13 @@
 const config = {
   gatsby: {
     pathPrefix: '/',
-    siteUrl: 'https://hasura.io',
+    siteUrl: 'https://www.openpolicy.cloud/',
     gaTrackingId: null,
     trailingSlash: false,
   },
   header: {
-    logo: 'https://graphql-engine-cdn.hasura.io/learn-hasura/assets/homepage/brand.svg',
-    logoLink: 'https://hasura.io/learn/',
+    logo: 'https://d33wubrfki0l68.cloudfront.net/5305a470ca0260247560b4f94daf68ed62d4a514/a9ffe/img/logos/integrations/conftest.png',
+    logoLink: 'https://www.openpolicy.cloud/',
     title:
       "<a href='https://hasura.io/learn/'><img class='img-responsive' src='https://graphql-engine-cdn.hasura.io/learn-hasura/assets/homepage/learn-logo.svg' alt='Learn logo' /></a>",
     githubUrl: 'https://github.com/hasura/gatsby-gitbook-boilerplate',
@@ -27,7 +27,11 @@ const config = {
 		      </div>
 		    </a>
 		  </li>`,
-    links: [{ text: '', link: '' }],
+    links: [
+        { text: 'Documentation', link: 'https://www.openpolicy.cloud/' },
+        { text: 'API', link: 'https://docs.openpolicy.cloud/' },
+        { text: 'Login', link: 'https://app.openpolicy.cloud/' }
+    ],
     search: {
       enabled: false,
       indexName: '',
