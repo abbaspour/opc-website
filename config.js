@@ -10,20 +10,13 @@ const config = {
     logoLink: 'https://www.openpolicy.cloud/',
     title:
       "<a href='https://hasura.io/learn/'><img class='img-responsive' src='https://graphql-engine-cdn.hasura.io/learn-hasura/assets/homepage/learn-logo.svg' alt='Learn logo' /></a>",
-    githubUrl: 'https://github.com/hasura/gatsby-gitbook-boilerplate',
+    githubUrl: 'https://github.com/abbaspour/opc-website',
     helpUrl: '',
     tweetText: '',
     social: `<li>
-		    <a href="https://twitter.com/hasurahq" target="_blank" rel="noopener">
+		    <a href="https://twitter.com/openpolicycloud" target="_blank" rel="noopener">
 		      <div class="twitterBtn">
-		        <img src='https://graphql-engine-cdn.hasura.io/learn-hasura/assets/homepage/twitter-brands-block.svg' alt={'Twitter'}/>
-		      </div>
-		    </a>
-		  </li>
-			<li>
-		    <a href="https://discordapp.com/invite/hasura" target="_blank" rel="noopener">
-		      <div class="discordBtn">
-		        <img src='https://graphql-engine-cdn.hasura.io/learn-hasura/assets/homepage/discord-brands-block.svg' alt={'Discord'}/>
+		        <img src='twitter-brands-block.svg' alt={'Twitter'}/>
 		      </div>
 		    </a>
 		  </li>`,
@@ -52,14 +45,14 @@ const config = {
     frontline: false,
     ignoreIndex: true,
     title:
-      "<a href='https://www.penpolicy.cloud/'>OpenPolicy.Cloud</a>",
+      "<a href='https://www.penpolicy.cloud/'>Open Policy Cloud</a>",
   },
   siteMetadata: {
-    title: 'Gatsby Gitbook Boilerplate | Hasura',
-    description: 'Documentation built with mdx. Powering hasura.io/learn ',
+    title: 'Open Policy Cloud Website',
+    description: 'Open Policy Cloud website based on gatsby-gitbook-starter',
     ogImage: null,
-    docsLocation: 'https://github.com/hasura/gatsby-gitbook-boilerplate/tree/master/content',
-    favicon: 'https://graphql-engine-cdn.hasura.io/img/hasura_icon_black.svg',
+    docsLocation: 'https://github.com/abbaspour/opc-website/tree/master/content',
+    favicon: 'https://www.openpolicy.cloud/opc.png',
   },
   pwa: {
     enabled: false, // disabling this will also remove the existing service worker.

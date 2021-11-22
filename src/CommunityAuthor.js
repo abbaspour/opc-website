@@ -14,7 +14,7 @@ const CommunityAuthor = ({ name, imageUrl, twitterUrl, githubUrl, description })
             {twitterUrl ? (
               <a href={twitterUrl} target="_blank" rel="noopener noreferrer">
                 <img
-                  src="https://storage.googleapis.com/graphql-engine-cdn.hasura.io/learn-hasura/assets/social-media/twitter-icon.svg"
+                  src="twitter-icon.svg"
                   alt="Twitter Icon"
                   aria-label="Twitter"
                 />
