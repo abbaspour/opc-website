@@ -49,7 +49,7 @@ const config = {
   },
   siteMetadata: {
     title: 'Open Policy Cloud Website',
-    description: 'Open Policy Cloud website based on gatsby-gitbook-starter',
+    description: 'Open Policy Cloud website based on https://github.com/hasura/gatsby-gitbook-boilerplate',
     ogImage: null,
     docsLocation: 'https://github.com/abbaspour/opc-website/tree/master/content',
     favicon: 'https://www.openpolicy.cloud/opc.png',
@@ -57,8 +57,8 @@ const config = {
   pwa: {
     enabled: false, // disabling this will also remove the existing service worker.
     manifest: {
-      name: 'Gatsby Gitbook Starter',
-      short_name: 'GitbookStarter',
+      name: 'Open Policy Cloud Website',
+      short_name: 'opc-website',
       start_url: '/',
       background_color: '#6b37bf',
       theme_color: '#6b37bf',
@@ -66,8 +66,8 @@ const config = {
       crossOrigin: 'use-credentials',
       icons: [
         {
-          src: 'opc.png',
-          sizes: `1024x1024`,
+          src: 'src/pwa-512.png',
+          sizes: `512x512`,
           type: `image/png`,
         },
       ],

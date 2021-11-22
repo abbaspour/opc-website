@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 const CommunityAuthor = ({ name, imageUrl, twitterUrl, githubUrl, description }) => {
   return (
@@ -14,7 +14,7 @@ const CommunityAuthor = ({ name, imageUrl, twitterUrl, githubUrl, description })
             {twitterUrl ? (
               <a href={twitterUrl} target="_blank" rel="noopener noreferrer">
                 <img
-                  src="twitter-icon.svg"
+                  src="https://storage.googleapis.com/graphql-engine-cdn.hasura.io/learn-hasura/assets/social-media/twitter-icon.svg"
                   alt="Twitter Icon"
                   aria-label="Twitter"
                 />
