@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import styled from '@emotion/styled';
 import { StaticQuery, graphql } from 'gatsby';
 import GitHubButton from 'react-github-btn';
@@ -9,10 +9,7 @@ import config from '../../config.js';
 import LoadingProvider from './mdxComponents/loading';
 import { DarkModeSwitch } from './DarkModeSwitch';
 
-import Sidebar from './sidebar';
-
 const help = require('./images/help.svg');
-
 
 const isSearchEnabled = config.header.search && config.header.search.enabled ? true : false;
 
@@ -26,6 +23,7 @@ if (isSearchEnabled && config.header.search.indexName) {
   });
 }
 
+import Sidebar from './sidebar';
 
 const LoadableComponent = Loadable({
   loader: () => import('./search/index'),
@@ -48,7 +46,7 @@ const StyledBgDiv = styled('div')`
   background-color: #f8f8f8;
   position: relative;
   display: none;
-  background: ${props => (props.isDarkThemeActive ? '#001932' : undefined)};
+  background: ${(props) => (props.isDarkThemeActive ? '#001932' : undefined)};
 
   @media (max-width: 767px) {
     display: block;
@@ -77,7 +75,7 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const logoImg = require('./images/logo.svg');
 
       const twitter = require('./images/twitter.svg');
