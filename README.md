@@ -7,4 +7,4 @@ Based on [gatsby-gitbook-starter](https://github.com/hasura/gatsby-gitbook-start
 * [opc-docs](https://github.com/abbaspour/opc-docs)
 * [opc-app](https://github.com/abbaspour/opc-app)
 * [opc-backend](https://github.com/abbaspour/opc-backend)
-* [opc-accounts](https://github.com/abbaspour/opc-accoun
+* [opc-accounts](https://github.com/abbaspour/opc-accounts)
