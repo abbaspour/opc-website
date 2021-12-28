@@ -8,8 +8,7 @@ const config = {
   header: {
     logo: 'opc.png',
     logoLink: 'https://www.openpolicy.cloud/',
-    title:
-      "<a href='https://hasura.io/learn/'><img class='img-responsive' src='https://graphql-engine-cdn.hasura.io/learn-hasura/assets/homepage/learn-logo.svg' alt='Learn logo' /></a>",
+    title: '',
     githubUrl: 'https://github.com/abbaspour/opc-website',
     helpUrl: '',
     tweetText: '',
@@ -45,7 +44,7 @@ const config = {
     frontline: false,
     ignoreIndex: true,
     title:
-      "<a href='https://www.penpolicy.cloud/'>Open Policy Cloud</a>",
+      "<a href='https://www.openpolicy.cloud/'>Open Policy Cloud</a>",
   },
   siteMetadata: {
     title: 'Open Policy Cloud Website',
